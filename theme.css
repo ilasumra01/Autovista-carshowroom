@@ -1,0 +1,58 @@
+/* 🌈 GLOBAL THEME */
+body{
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    font-family: Arial;
+    color:white;
+}
+
+/* 🔥 Glass Card */
+.glass-box{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Inputs */
+.form-control:focus,
+.form-select:focus{
+    border-color:#ffc107;
+    box-shadow:0 0 8px rgba(255,193,7,0.7);
+}
+
+/* Buttons */
+.btn-custom{
+    background:#ffc107;
+    color:black;
+    font-weight:bold;
+    border:none;
+    transition:0.3s;
+}
+
+.btn-custom:hover{
+    background:#e0a800;
+    transform:scale(1.05);
+}
+
+/* Navbar */
+.navbar{
+    background: rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+    margin-top:50px;
+}

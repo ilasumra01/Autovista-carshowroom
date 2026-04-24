@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Buy Car</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+     background: linear-gradient(135deg,#667eea,#764ba2);
+     font-family: Arial;
+}
+
+/* Card */
+.buy-box{
+    max-width:600px;
+    margin:auto;
+    margin-top:60px;
+    padding:25px;
+    border-radius:15px;
+    background:white;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Image */
+.car-img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    background:#f8f9fa;
+    padding:10px;
+}
+
+/* Animation */
+.buy-box{
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="buy-box">
+
+        <h2 class="text-success">✅ Order Placed Successfully!</h2>
+
+        <img src="{{url_for('static',filename='images/'+car.image)}}" class="car-img">
+
+        <h4 class="mt-3">{{car.model}}</h4>
+
+        <p class="text-muted">Price: ₹ {{car.price}}</p>
+
+        <p>🚗 Thank you for purchasing from AutoVista!</p>
+
+        <a href="/showroom" class="btn btn-primary mt-3">Back to Showroom</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

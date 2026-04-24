@@ -1,0 +1,68 @@
+body{
+font-family:Arial;
+background:#eef2f7;
+margin:0;
+padding:20px;
+}
+
+.car-container{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.car{
+width:220px;
+display:inline-block;
+background:white;
+padding:10px;
+margin:15px;
+border-radius:8px;
+box-shadow:0 0 8px #ccc;
+text-align:center;
+}
+.car:hover{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.car img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+}
+
+button{
+background:#1aa39a;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#148a82;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#1aa39a;
+color:white;
+padding:15px;
+border-radius:8px;
+}
+
+.navbar a{
+color:white;
+margin-left:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.navbar a:hover{
+text-decoration:underline;
+}

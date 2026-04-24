@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{car.model}} Details</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body{
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    font-family: Arial;
+}
+
+/* Card */
+.details-box{
+    max-width:850px;
+    margin:auto;
+    margin-top:50px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    overflow:hidden;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* 🔥 FIXED IMAGE */
+.car-img{
+    width:100%;
+    height:250px;              /* ✅ controlled height */
+    object-fit:contain;        /* ✅ no stretching */
+    background:#f8f9fa;
+    padding:10px;
+    transition:0.3s;
+}
+
+.car-img:hover{
+    transform:scale(1.05);
+}
+
+/* Info */
+.info{
+    padding:20px;
+}
+
+.info p{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+/* Price */
+.price-badge{
+    background:#28a745;
+    font-size:16px;
+    padding:6px 12px;
+}
+
+/* Buttons */
+.btn-custom{
+    width:100%;
+    margin-top:8px;
+}
+
+/* Animation */
+.details-box{
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="details-box">
+
+        <!-- Image -->
+        <img src="{{url_for('static',filename='images/'+car.image)}}" class="car-img">
+
+        <div class="info text-center">
+
+            <!-- Title -->
+            <h2 class="fw-bold">{{car.model}}</h2>
+
+            <!-- Price -->
+            <div class="mb-3">
+                <span class="badge price-badge">₹ {{car.price}}</span>
+            </div>
+
+            <!-- Details -->
+            <div class="row text-start mt-3">
+
+                <div class="col-md-6">
+                    <p><i class="fa fa-cogs"></i> <b>Engine:</b> {{car.engine}}</p>
+                    <p><i class="fa fa-gas-pump"></i> <b>Mileage:</b> {{car.mileage}}</p>
+                </div>
+
+                <div class="col-md-6">
+                    <p><i class="fa fa-car"></i> <b>Transmission:</b> {{car.transmission}}</p>
+                    <p><i class="fa fa-star"></i> <b>Features:</b> {{car.features}}</p>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <a href="/add_cart/{{car.id}}" class="btn btn-success btn-custom">
+                <i class="fa fa-cart-plus"></i> Add to Cart
+            </a>
+
+            <a href="/buy/{{car.id}}" class="btn btn-primary btn-custom">
+                <i class="fa fa-bolt"></i> Buy Now
+            </a>
+
+            <a href="/showroom" class="btn btn-secondary btn-custom">
+                ⬅ Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

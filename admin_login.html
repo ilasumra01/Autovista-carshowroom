@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+        background: linear-gradient(135deg,#667eea,#764ba2);
+    font-family: Arial;
+}
+
+.box{
+    max-width:600px;
+    margin:auto;
+    margin-top:60px;
+    padding:30px;
+    border-radius:15px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="box text-white">
+
+<h2 class="text-center">Admin Panel</h2>
+
+<table class="table bg-white text-center">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Rating</th>
+<th>Message</th>
+</tr>
+
+{% for f in data %}
+<tr>
+<td>{{f.id}}</td>
+<td>{{f.name}}</td>
+<td>{{f.email}}</td>
+<td>{{f.rating}}</td>
+<td>{{f.message}}</td>
+</tr>
+{% endfor %}
+
+</table>
+<div class="text-center mt-3">
+<a href="/showroom" class="btn btn-light">Back</a>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
